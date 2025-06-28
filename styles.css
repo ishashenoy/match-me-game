@@ -1,0 +1,266 @@
+@keyframes move {
+  0% {transform: translateY(0);}
+  55% {transform: translateY(5px);}
+  100% {transform: translateY(0);}
+}
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+}
+
+body{
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+
+    font: 21px "Darumadrop One", sans-serif;
+}
+
+.button-container{
+    display: grid;
+    margin-top: 10px;
+}
+
+#music-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 30;
+    background: rgb(255, 224, 245);
+    border: 4px solid rgb(223, 175, 219);
+    color: rgb(126, 126, 126);
+    border-radius: 50%;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-family: "Darumadrop One", sans-serif;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+#music-button:hover {
+    transform: scale(1.1);
+}
+
+.button-container button{
+    margin: 10px;
+    padding: 7px;
+    border-radius: 15px;
+    border: 5px solid rgb(141, 137, 186);
+    background: #ecb8e3;
+    background: linear-gradient(5deg, rgb(190, 192, 233) 0%, rgb(217, 205, 244) 100%);
+    color: white;
+    font: 21px "Darumadrop One", sans-serif;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.12);
+}
+
+.button-container button img{
+    width: 90%;
+    justify-self: center;
+    border-radius: 15px;
+    margin-top: 3px;
+}
+
+
+.game-container{
+    background-image: url("assets/img/background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: rgba(255,255,255,0.2);
+    background-blend-mode: lighten;
+    position: relative;
+    width: 75%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.options-container{
+    background-color: #f6f4f8;
+    width: 25%;
+    padding: 10px;
+    border-left:5px solid rgb(182, 182, 182);
+}
+
+p{
+    text-align: center;
+    color: rgb(144, 141, 143);
+    font-size: 30px;
+}
+
+footer {
+    background-color: white;
+    font: 300 15px "Brush Script MT", Cursive;
+    width: 100vw;
+    position:fixed;
+    bottom: 0px;
+    padding:5px;
+    z-index: 100;
+}
+
+/* inside logo-container*/
+.logo-container{
+    width: 80%;
+    max-width: 520px;
+    margin: 0 auto;
+    padding: 10px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    background: #f6f4f8;
+    border: 5px solid rgb(182, 182, 182);
+    box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.modes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modes button{
+    margin: 10px;
+    border: 5px solid rgb(156, 127, 154);
+    font-size: 25px;
+    background: #be8db6;
+    background: linear-gradient(5deg, rgb(194, 147, 186) 0%, rgb(219, 175, 213) 100%);
+    color: white;
+}
+
+.logo {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    animation: move 2s infinite;
+}
+
+.caption{
+    text-align: center;
+}
+
+/* button styling */
+.button {
+    padding: 1px 10px 10px 10px;
+    border: 5px solid rgb(141, 137, 186);
+    background: #ecb8e3;
+    background: linear-gradient(5deg, rgb(190, 192, 233) 0%, rgb(217, 205, 244) 100%);
+    color: white;
+    border-radius: 15px;
+    font: 400 30px "Darumadrop One", sans-serif;
+    box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.12);
+}
+
+.button:hover{
+    transform:scale(1.05);
+    transition: transform ease-in-out 0.2s;
+}
+
+.actions{
+    margin-top: 20px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.grid-container {
+    padding: 20px;
+    display: grid;
+    justify-content: center;
+    grid-gap: 10px; 
+    align-content: center;
+    max-width: 100%;
+    grid-template-columns: repeat(4,110px);
+    grid-template-rows: repeat(2,calc(75px/2*3));
+    background: #f1edf7;
+    border: 4px solid rgb(182, 182, 182);
+    transition: all 0.5s ease-in-out;
+    border-radius: 15px;
+    box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.12);
+}
+
+.card{
+    height: calc(140px / 2*3);
+    
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 4px solid rgb(173, 166, 170);
+    background-color: white;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease-in-out;
+}
+
+#gamewon{
+    position: absolute;
+    z-index: 20;
+    background:rgb(239, 240, 194);
+    border: 3px solid rgb(199, 188, 142); 
+    padding: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    color: rgb(59, 59, 59);
+}
+
+#gamewon button{
+    border: none;
+    background:rgb(239, 240, 194);
+    padding-left: 10px;
+    font: 800 19px "Darumadrop One", sans-serif;
+    color: rgb(59, 59, 59);
+}
+
+#gamewon button:hover{
+    color:rgb(95, 95, 95);
+}
+
+.front-image{
+    width: 100%;
+}
+
+.card.flipped{
+    transform: rotateY(180deg);
+}
+
+.front, .back{
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.front{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg);
+}
+
+.back{
+    background-size: contain;
+    background-position: center;
+    cursor: pointer;
+}
+@media screen and (max-width: 770px) {
+  body {
+    display: grid;
+  }
+  .button-container{
+    display: flex;
+  }
+}
