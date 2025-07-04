@@ -160,10 +160,8 @@ function mode(gameMode){
     let board = document.querySelector(".grid-container");
     if (gameMode==="easy"){
         cards = [1,2,3,4,1,2,3,4];
-        board.style.gridTemplateRows = "repeat(2,calc(80px/2*3));";
     } else if(gameMode==="hard"){
         cards = [1,2,3,4,5,6,1,2,3,4,5,6];
-        board.style.gridTemplateRows = "repeat(3,calc(80px/2*3));"; 
     }
     scoreWin = cards.length/2;
     resetBoard();

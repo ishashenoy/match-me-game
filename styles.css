@@ -14,20 +14,19 @@
 body{
     min-height: 100vh;
     min-width: 100vw;
-    display: flex;
 
     font: 21px "Darumadrop One", sans-serif;
 }
 
 .button-container{
     display: grid;
-    margin-top: 10px;
+    margin-top: 0.5rem;
 }
 
 #music-button {
     position: absolute;
-    top: 10px;
-    left: 10px;
+    top: 1rem;
+    left: 1rem;
     z-index: 30;
     background: rgb(255, 224, 245);
     border: 4px solid rgb(223, 175, 219);
@@ -72,13 +71,12 @@ body{
 .game-container{
     background-image: url("assets/img/background.jpg");
     background-attachment: fixed;
-    background-position: center;
+    background-position: contain;
     background-size: 100%;
     background-repeat: no-repeat;
     background-color: rgba(255,255,255,0.2);
     background-blend-mode: lighten;
     position: relative;
-    width: 75%;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -87,15 +85,15 @@ body{
 
 .options-container{
     background-color: #f6f4f8;
-    width: 25%;
     padding: 10px;
     border-left:5px solid rgb(182, 182, 182);
+    border-top:5px solid rgb(182, 182, 182);
 }
 
 p{
     text-align: center;
     color: rgb(144, 141, 143);
-    font-size: 30px;
+    font-size: 1.5rem;
 }
 
 footer {
@@ -173,14 +171,14 @@ footer {
 }
 
 .grid-container {
-    padding: 20px;
+    padding: 1rem;
     display: grid;
     justify-content: center;
     grid-gap: 10px; 
     align-content: center;
     max-width: 100%;
-    grid-template-columns: repeat(4,110px);
-    grid-template-rows: repeat(2,calc(75px/2*3));
+    grid-template-columns: repeat(4,6rem);
+    grid-template-rows: repeat(2,calc(5rem/2*3));
     background: #f1edf7;
     border: 4px solid rgb(182, 182, 182);
     transition: all 0.5s ease-in-out;
@@ -188,17 +186,26 @@ footer {
     box-shadow: 10px 10px 0px -2px rgba(0,0,0,0.12);
 }
 
-.card{
-    height: calc(140px / 2*3);
-    
-    width: 100px;
-    height: 100px;
+.card{    
+    width: 6rem;
+    height: 6rem;
     border-radius: 10px;
     border: 4px solid rgb(173, 166, 170);
     background-color: white;
     position: relative;
     transform-style: preserve-3d;
     transition: all 0.5s ease-in-out;
+}
+
+@media (max-width: 500px) {
+    .grid-container{
+        grid-template-columns: repeat(4,5rem);
+        grid-template-rows: repeat(2,calc(4rem/2*3));
+    }
+    .card{
+        width: 5rem;
+        height: 5rem;
+    }
 }
 
 #gamewon{
@@ -255,12 +262,4 @@ footer {
     background-size: contain;
     background-position: center;
     cursor: pointer;
-}
-@media screen and (max-width: 770px) {
-  body {
-    display: grid;
-  }
-  .button-container{
-    display: flex;
-  }
 }
